@@ -1,0 +1,23 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+
+<Files ~ "^\.(htaccess|htpasswd)$">
+deny from all
+</Files>
+
+<IfModule mod_php5.c>
+php_value upload_max_filesize 100000000
+php_value post_max_size 110000000
+php_value memory_limit 120000000
+php_value max_input_time 20
+</IfModule>
+
+#AuthUserFile /var/www/cryptopie_admin/.htpasswd
+AuthUserFile C:/xampp/htdocs/cryptopie_admin/.htpasswd
+AuthGroupFile /dev/null
+AuthName "Please enter your ID and password"
+AuthType Basic
+require valid-user 
+order deny,allow

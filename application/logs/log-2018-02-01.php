@@ -1,0 +1,32 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2018-02-01 14:01:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:02:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:03:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:04:01 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:05:01 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:06:03 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:07:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:08:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:09:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:10:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:11:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:12:01 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:13:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:14:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:15:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:16:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:17:01 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:18:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:19:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:20:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:21:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:22:01 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:23:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:24:03 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:25:01 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:26:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:27:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:28:02 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:29:01 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81
+ERROR - 2018-02-01 14:30:01 --> Severity: Warning --> Invalid argument supplied for foreach() /var/www/cryptopie/application/libraries/controller/Lib_finance.php 81

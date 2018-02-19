@@ -1,0 +1,8 @@
+{
+    "require": {
+        "smarty/smarty": "^3.1",
+        "monolog/monolog": "1.17.*",
+        "blockchain/blockchain" : "1.*",
+        "coinbase/coinbase": "~2.0"
+    }
+}

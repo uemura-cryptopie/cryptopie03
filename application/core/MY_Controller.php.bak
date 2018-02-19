@@ -1,0 +1,206 @@
+<?php
+class MY_Controller extends CI_Controller {
+
+	const HP_NAME        = 'CryptoPie';
+	const META_ROBOTS    = 'noindex,nofollow';
+	const MAIL_FROM      = 'info@cryptopie.com';
+	const MAIL_FROM_NAME = 'CryptoPie';
+
+	public function __construct()
+	{
+		parent::__construct();
+		date_default_timezone_set('Asia/Tokyo');
+
+		// セッション対策
+		$this->output->set_header('Expires:');
+		$this->output->set_header('Cache-Control:');
+		$this->output->set_header('Pragma:');
+
+		// キャッシュを無効化
+		$this->smarty->force_compile = true;
+		$this->smarty->setCompileCheck(true);
+		// 実行中のcontroller&action取得
+		$this->controller = str_replace('_', '-', $this->router->class);
+		$this->action     = str_replace('_', '-', $this->router->method);
+		$this->assign('controller', $this->controller);
+		$this->assign('action', $this->action);
+
+		$this->assign('common', 'common/');
+		$this->assign('base_url' , base_url());
+		// JS,CSS URL
+		$this->assign('css_url' , base_url() . 'css/');
+		$this->assign('js_url'  , base_url() . 'js/');
+		// IMAGE URL
+		$this->imgUrl = base_url() . 'img/';
+		$this->assign('img_url' , $this->imgUrl);
+		// IMAGE PATH
+		$this->imgPath = FCPATH . 'img/';
+
+		// ROOT URL
+		$this->basePath = FCPATH;
+
+		// 残高情報
+		$this->load->library('controller/lib_mypage');
+		$data = $this->lib_mypage->commonData();
+		$this->assign('balance', $data['balance']);
+
+		// user agant情報
+		$this->load->library('support/lib_settings');
+		$this->lib_settings->set_url();
+
+		// user agant情報
+		$this->load->library('support/lib_user_agent');
+		$this->lib_user_agent->assign_agent();
+
+		$this->assign('is_ie', $this->is_ie());
+		$this->assign('is_ie6', $this->is_ie6());
+		$this->assign('is_ie7', $this->is_ie7());
+		$this->assign('is_ie8', $this->is_ie8());
+		$this->assign('is_ie9', $this->is_ie9());
+		$this->assign('is_ipad', $this->is_ipad());
+		$this->assign('is_sumaho', $this->is_sumaho());
+		$this->assign('is_iphone', $this->is_iphone());
+		$this->assign('is_android', $this->is_android());
+		$this->assign('is_firefox', $this->is_firefox());
+		$this->assign('is_chrome', $this->is_chrome());
+		$this->assign('is_androidLU', $this->is_androidLU());
+		$this->assign('is_android23', $this->is_android23());
+		$this->assign('is_android40', $this->is_android40());
+
+		// meta
+		$this->assign('title' ,  self::HP_NAME);
+		$this->assign('robots' , self::META_ROBOTS);
+	}
+
+
+
+
+	/**
+	 * テンプレートにassign
+	 *
+	 */
+	public function assign($name, $value) {
+		$this->smarty->assign($name, $value);
+	}
+
+	/**
+	 * テンプレート呼び出し
+	 *
+	 */
+	public function tpl($templete) {
+		$this->smarty->display($templete);
+	}
+
+
+	/**
+	 * ログインチェック
+	 *
+	 */
+	public function is_login()
+	{
+		// ログインチェック
+		if (!$this->session->userdata("is_login")) {
+			// ログイン情報なし
+			redirect(base_url());
+		} else {
+			// ログイン情報あり
+			$this->login_info = $this->session->userdata();
+			$this->assign('login_info', $this->login_info);
+		}
+	}
+
+
+	public function is_sumaho()
+	{
+		if ($this->is_iphone() || $this->is_android() || $this->forcingSP()) {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
+	/**
+	 * 強制的にSPモードにする
+	 *
+	 */
+	public function forcingSP()
+	{
+		if ($this->input->get('sp_mode') == 'on') {
+			return TRUE;
+		} else {
+			return FALSE;
+		}
+	}
+
+
+	protected function check_agent()
+	{
+		$http_user_agent = $this->input->server('HTTP_USER_AGENT');
+		return ($http_user_agent) ? $http_user_agent : '';
+	}
+
+	protected function is_ie()
+	{
+		return preg_match('/MSIE/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_ie6()
+	{
+		return preg_match('/MSIE 6/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_ie7()
+	{
+		return preg_match('/MSIE 7/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_ie8()
+	{
+		return preg_match('/MSIE 8/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_ie9()
+	{
+		return preg_match('/MSIE 9/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_iphone()
+	{
+		return preg_match('/iPhone/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_ipad()
+	{
+		return preg_match('/iPad/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_android()
+	{
+		return preg_match('/Android/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_androidLU()
+	{
+		return preg_match('/Linux; U;/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_android23()
+	{
+		return preg_match('/Android 2.3/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_android40()
+	{
+		return preg_match('/Android 4.0/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_firefox()
+	{
+		return preg_match('/Firefox/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+
+	protected function is_chrome()
+	{
+		return preg_match('/Chrome/', $this->check_agent()) ? TRUE : FALSE ;
+	}
+}
